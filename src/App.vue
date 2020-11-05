@@ -7,9 +7,15 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      data: ''
+    };
   },
-  mounted() {}
+  mounted() {
+    this.axios.get('/user/login').then(res => {
+      this.data = res;
+    });
+  }
 };
 </script>
 <style></style>
