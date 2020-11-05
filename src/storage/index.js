@@ -32,6 +32,9 @@ export default {
   clearItem(key, moduleName) {
     const storage = this.getStorage();
     if (moduleName) {
+      if (!storage[moduleName]) {
+        return;
+      }
       delete storage[moduleName][key];
     } else {
       delete storage[key];
